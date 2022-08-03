@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google" content="notranslate" />
+    <title>Bitcoin</title>
+    <script>
+      const SLIDES = 1;
+      let current = parseInt(window.location.hash.substring(1)) || 0;
+      window.location.hash = current;
+      document.addEventListener("keydown", function(event) {
+        switch (event.key) {
+          case " ":
+          case "ArrowDown":
+          case "ArrowRight":
+          case "Enter":
+            slide(current + 1);
+            break;
+          case "ArrowLeft":
+          case "ArrowUp":
+            slide(current - 1);
+            break;
+          }
+      });
+
+      function slide(i) {
+        if (i < 0 || i >= SLIDES) {
+          return;
+        }
+
+        window.location.hash = current = i;
+      }
+
+      let x;
+
+      document.addEventListener('touchstart', e => {
+        x = e.changedTouches[0].screenX;
+      });
+
+      document.addEventListener('touchend', e => {
+        if (e.changedTouches[0].screenX < x) {
+          slide(current + 1);
+        }
+
+        if (e.changedTouches[0].screenX > x) {
+          slide(current - 1);
+        }
+      });
+
+    </script>
+    <style>
+      html {
+        background-color: black;
+        color: white;
+        font-size: 200%;
+      }
+
+      section {
+        background-color: black;
+        padding-left: 2em;
+        padding-right: 2em;
+        bottom: 0em;
+        left: 0em;
+        position: absolute;
+        right: 0em;
+        top: 0em;
+        z-index: 0;
+        overflow: hidden;
+      }
+
+      section:target {
+        z-index: 1;
+        overflow: auto;
+      }
+    </style>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <section id="0"><h1>Bitcoin</h1>
+<p>bitcoin-presentation</p>
+<h1>Feel free to interrupt and ask questions!</h1>
+<p>Your questions are more important than anything I have to say.</p>
+<p>If you have a question, other people probably have it too.</p>
+<ul>
+<li>
+<p>Explain what is bitcoin</p>
+<ul>
+<li>Open financial system</li>
+</ul>
+</li>
+<li>
+<p>you can buy a fraction of a bitcoin</p>
+</li>
+<li>
+<p>The US dollar is fake</p>
+</li>
+<li>
+<p>fixed amount of bitcoin</p>
+</li>
+<li>
+<p>Nobody can stop you</p>
+</li>
+<li>
+<p>You can use it directly</p>
+</li>
+<li>
+<p>Inflation benefits those with asset</p>
+</li>
+<li>
+<p>Declining purchasing power of minimum wage</p>
+</li>
+<li>
+<p>Basics: blocks, transactions, addresses?</p>
+</li>
+<li>
+<p>Banking has trusted intermediaries</p>
+</li>
+<li>
+<p>Miners process transactions</p>
+</li>
+<li>
+<p>What backs a dollar?</p>
+</li>
+<li>
+<p>Common misconceptions</p>
+</li>
+<li>
+<p>Other projects understimate risk</p>
+</li>
+<li>
+<p>Ask questions! Interrupt!</p>
+</li>
+<li>
+<p>How much does a candy bar cost?</p>
+</li>
+<li>
+<p>Inflation benefits asset holders</p>
+</li>
+<li>
+<p>Who wants to buy a house? Getting more and more expensive</p>
+</li>
+</ul></section>
+  </body>
+</html>
